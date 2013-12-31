@@ -6,7 +6,7 @@ if ! (which git); then
     sudo apt-get install -y git-core
 fi
 
-INSTALLER_URL=${INSTALLER_URL:-https://github.com/yudai/cf_nise_installer.git}
+INSTALLER_URL=${INSTALLER_URL:-https://github.com/bqm007/cf_nise_installer_services.git}
 INSTALLER_BRANCH=${INSTALLER_BRANCH:-master}
 
 if [ ! -d cf_nise_installer ]; then
