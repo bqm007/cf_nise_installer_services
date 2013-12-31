@@ -28,7 +28,7 @@ Run the commands below on your server:
 
 ```sh
 sudo apt-get install curl
-bash < <(curl -s -k -B https://raw.github.com/yudai/cf_nise_installer_services/${INSTALLER_BRANCH:-master}/local/bootstrap.sh)
+bash < <(curl -s -k -B https://raw.github.com/bqm007/cf_nise_installer_services/${INSTALLER_BRANCH:-master}/local/bootstrap.sh)
 ```
 
 The `bootstrap.sh` script installs everything needed for your services node. This command may take a couple of hours at first run.
