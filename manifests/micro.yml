@@ -58,7 +58,7 @@ properties:
             snapshot:
               quota: 1
   
-  redis:
+    redis:
       default:
         description: "Developer, 250MB storage, 10 connections"
         free: true
