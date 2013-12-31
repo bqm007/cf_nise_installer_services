@@ -1,6 +1,6 @@
 #!/bin/bash -ex
 
-CF_RELEASE_URL=${CF_RELEASE_URL:-https://github.com/cloudfoundry/cf-services-contrib-release.git}
+CF_RELEASE_URL=${CF_RELEASE_URL:-https://github.com/zhanganha/cf-services-contrib-release.git}
 CF_RELEASE_BRANCH=${CF_RELEASE_BRANCH:-master}
 CF_RELEASE_USE_HEAD=${CF_RELEASE_USE_HEAD:-no}
 
