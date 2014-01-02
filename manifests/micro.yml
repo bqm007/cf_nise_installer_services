@@ -6,14 +6,10 @@ deployment: cf-services-contrib-release
 jobs:
 - name: micro
   template:
-  - postgresql_gateway_ng
-  - postgresql_node_ng
   - redis_gateway
   - redis_node_ng
   properties:
     plan: default
-    postgresql_node:
-      plan: default
     uaa_client_id: "cf"
     uaa_endpoint: http://uaa.10.10.22.220.xip.io
     uaa_client_auth_credentials:
@@ -36,27 +32,6 @@ properties:
     authorization_timeout: 5
 
   service_plans:
-    postgresql:
-      default:
-        description: "Developer, 250MB storage, 10 connections"
-        free: true
-        job_management:
-          high_water: 230
-          low_water: 20
-        configuration:
-          capacity: 125
-          max_clients: 10
-          quota_files: 4
-          quota_data_size: 240
-          enable_journaling: true
-          backup:
-            enable: false
-          lifecycle:
-            enable: false
-            serialization: enable
-            snapshot:
-              quota: 1
-  
     redis:
       default:
         description: "Developer, 250MB storage, 10 connections"
@@ -78,21 +53,6 @@ properties:
             snapshot:
               quota: 1
 
-  postgresql_gateway:
-    ip_route: 10.10.22.125
-    token: POSTGRESQL_SERVICE_TOKEN
-    default_plan: default
-    supported_versions: ["9.2"]
-    version_aliases:
-      current: "9.2"
-    cc_api_version: v2
-  postgresql_node:
-    ip_route: 10.10.22.125
-    supported_versions: ["9.2"]
-    default_version: "9.2"
-    max_tmp: 900
-    password: c1oudc0w
-  
   redis_gateway:
     ip_route: 10.10.22.125
     token: REDIS_SERVICE_TOKEN # CHANGE - the token you use later with `cf create-service-auth-token`
