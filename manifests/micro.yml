@@ -11,9 +11,8 @@ jobs:
   - redis_gateway
   - redis_node_ng
   properties:
+    plan: default
     postgresql_node:
-      plan: default
-    redis_node:
       plan: default
     uaa_client_id: "cf"
     uaa_endpoint: http://uaa.10.10.22.220.xip.io
