@@ -1,8 +1,6 @@
 ---
 deployment: cf-services-contrib-release
 
-# String '196.168.10.10' will be replaced with the real IP address
-
 jobs:
 - name: micro
   template:
@@ -11,7 +9,7 @@ jobs:
   properties:
     plan: default
     uaa_client_id: "cf"
-    uaa_endpoint: http://uaa.10.10.22.220.xip.io
+    uaa_endpoint: http://uaa.vcap.me
     uaa_client_auth_credentials:
       username: services
       password: c1oudc0w
@@ -22,7 +20,7 @@ properties:
     management: default
 
   cc:
-    srv_api_uri: http://api.10.10.22.220.xip.io
+    srv_api_uri: http://api.vcap.me
 
   nats:
     address: 10.10.22.220
@@ -54,15 +52,13 @@ properties:
               quota: 1
 
   redis_gateway:
-    ip_route: 10.10.22.224
-    token: REDIS_SERVICE_TOKEN # CHANGE - the token you use later with `cf create-service-auth-token`
+    token: c1oudc0w
     default_plan: default
     supported_versions: ["2.6"]
     version_aliases:
       current: "2.6"
     cc_api_version: v2
   redis_node:
-    ip_route: 10.10.22.224
     supported_versions: ["2.6"]
     default_version: "2.6"
     max_tmp: 900
